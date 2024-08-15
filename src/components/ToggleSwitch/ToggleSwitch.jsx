@@ -55,41 +55,41 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 function DarkMode() {
-  const [darkMode, setDarkMode] = useState(false);
-  console.log(`state is ${darkMode}`);
+  // NOTE - EASY WAY - WITHOUT USING CUSTOM HOOK
 
-  // const bodyClass = document.getElementById("main").classList;
-  const bodyClass = window.document.body.classList;
-  console.log(bodyClass);
+  // const [darkMode, setDarkMode] = useState(false);
+  // console.log(`state is ${darkMode}`);
 
-  useEffect(() => {
-    console.log("use effect");
+  // useEffect(() => {
+  //   console.log("use effect");
 
-    const getMain = window.document.querySelector("#root");
-    console.log(getMain);
+  //   const getRoot = window.document.querySelector("#root");
+  //   console.log(getRoot);
 
-    const addDarkClass = "dark";
+  //   const addDarkClass = "dark";
 
-    if (darkMode) {
-      getMain.classList.add(addDarkClass);
-      console.log(getMain);
-    } else {
-      getMain.classList.remove(addDarkClass);
-      console.log(getMain);
-    }
-  }, [darkMode]);
+  //   if (darkMode) {
+  //     getRoot.classList.add(addDarkClass);
+  //     console.log(getRoot);
+  //   } else {
+  //     getRoot.classList.remove(addDarkClass);
+  //     console.log(getRoot);
+  //   }
+  // }, [darkMode]);
 
-  // const [toggleDark, setToggleDark] = checkDarkMode();
+  //NOTE using custom react hook
+  const [toggleDark, setToggleDark] = checkDarkMode();
+  const handleToggleDark = () => {
+    setToggleDark(!toggleDark);
+  };
 
   return (
     <FormGroup>
       <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} />}
         label="Dark Mode"
-        // onChange={checkDarkMode}
-        // onChange={() => setDarkMode(!darkMode)}
-        onClick={() => setDarkMode(!darkMode)}
-        // onChange={handleDarkMode}
+        // onClick={() => setDarkMode(!darkMode)} // works with state in same component
+        onClick={handleToggleDark} // for custom hook for dark mode
       />
     </FormGroup>
   );

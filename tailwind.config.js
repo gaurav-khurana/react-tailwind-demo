@@ -11,7 +11,7 @@ export default {
         // add custom colors in tailwind config file
         primary: "#202225",
         secondary: "#5865f2",
-        gray: colors.trueGray, // import trueGray colors from tailwind
+        gray: colors.neutral, // import trueGray colors from tailwind; frm version 3, trueGray renamed to neutral in Tailwind
         gray: {
           // overide trueGray colors to discord colors
           900: "#202225",
