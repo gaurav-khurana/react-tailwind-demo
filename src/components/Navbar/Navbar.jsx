@@ -3,7 +3,7 @@ import DarkMode from "../ToggleSwitch/ToggleSwitch";
 
 function Navbar() {
   return (
-    <div className="fixed top-0 w-screen pl-[10vw] flex flex-row items-center bg-gray-900 text-white">
+    <div className="navbar fixed top-0 w-screen pl-[10vw] flex flex-row items-center bg-gray-900 text-white">
       <img
         className="mr-4 hover:scale-105 transition-all duration-300 cursor-pointer"
         src={ReactImage}

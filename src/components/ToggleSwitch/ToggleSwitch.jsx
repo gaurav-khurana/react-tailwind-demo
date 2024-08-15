@@ -1,9 +1,10 @@
-import * as React from "react";
+// import * as React from "react";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import Typography from "@mui/material/Typography";
+import checkDarkMode from "../../hooks/DarkModeHook";
+import { useEffect, useState } from "react";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -53,13 +54,45 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default function DarkMode() {
+function DarkMode() {
+  const [darkMode, setDarkMode] = useState(false);
+  console.log(`state is ${darkMode}`);
+
+  // const bodyClass = document.getElementById("main").classList;
+  const bodyClass = window.document.body.classList;
+  console.log(bodyClass);
+
+  useEffect(() => {
+    console.log("use effect");
+
+    const getMain = window.document.querySelector("#root");
+    console.log(getMain);
+
+    const addDarkClass = "dark";
+
+    if (darkMode) {
+      getMain.classList.add(addDarkClass);
+      console.log(getMain);
+    } else {
+      getMain.classList.remove(addDarkClass);
+      console.log(getMain);
+    }
+  }, [darkMode]);
+
+  // const [toggleDark, setToggleDark] = checkDarkMode();
+
   return (
     <FormGroup>
       <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+        control={<MaterialUISwitch sx={{ m: 1 }} />}
         label="Dark Mode"
+        // onChange={checkDarkMode}
+        // onChange={() => setDarkMode(!darkMode)}
+        onClick={() => setDarkMode(!darkMode)}
+        // onChange={handleDarkMode}
       />
     </FormGroup>
   );
 }
+
+export default DarkMode;

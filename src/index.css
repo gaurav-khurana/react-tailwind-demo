@@ -12,3 +12,19 @@
     /* scale-0 makes tip invisible */
   }
 }
+
+.dark > *,
+.dark .navbar,
+.dark .sidebar,
+.dark div > p {
+  background-color: black;
+  color: greenyellow;
+}
+
+.dark h1 {
+  color: cyan;
+}
+
+.dark .button-dark {
+  color: black;
+}

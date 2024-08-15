@@ -9,7 +9,10 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="h-screen w-screen flex flex-col justify-start items-center mt-10 bg-gray-300 ">
+    <main
+      className="h-screen w-screen flex flex-col justify-start items-center mt-10 bg-gray-300"
+      id="main"
+    >
       <Navbar />
 
       <div className="flex flex-row justify-center align-middle mt-[25vh] mb-5">
@@ -29,13 +32,13 @@ function App() {
       <div className="flex flex-col justify-center items-center py-4 my4">
         <div className="mt-5">
           <button
-            className="px-4 py-2 w-[10vw] border-red-500 bg-teal-500 hover:bg-amber-700 hover:text-white transition-all duration-300 hover:rounded-md "
+            className="button-dark px-4 py-2 w-[10vw] border-red-500 bg-teal-500 hover:bg-amber-700 hover:text-white transition-all duration-300 hover:rounded-md "
             onClick={() => setCount((count) => count + 1)}
           >
             Count {count}
           </button>
           <button
-            className="px-4 py-2 ml-10 w-[10vw] border-red-500 bg-amber-500 hover:bg-amber-700 hover:text-white transition-all duration-300 hover:rounded-md "
+            className="button-dark px-4 py-2 ml-10 w-[10vw] border-red-500 bg-amber-500 hover:bg-amber-700 hover:text-white transition-all duration-300 hover:rounded-md "
             onClick={() => setCount(0)}
           >
             Reset
@@ -55,7 +58,7 @@ function App() {
       </p>
 
       <Sidebar />
-    </div>
+    </main>
   );
 }
 
