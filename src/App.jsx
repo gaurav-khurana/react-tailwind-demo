@@ -25,8 +25,8 @@ function App() {
         </a>
       </div>
 
-      <h1 className="text-3xl font-mono font-bold text-orange-500">
-        Vite + React + Tailwind CSS
+      <h1 className="text-3xl font-mono font-bold text-orange-500 text-center">
+        Vite + React + Tailwind CSS + <br></br> Custom React Hook for Dark Mode
       </h1>
 
       <div className="flex flex-col justify-center items-center py-4 my4">
