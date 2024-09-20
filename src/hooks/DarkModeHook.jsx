@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 //   return item ? JSON.parse(item) : initialValue;
 // };
 
-const checkDarkMode = () => {
+const useDarkMode = () => {
   const [darkMode, setDarkMode] = useState(false);
   console.log(`state is ${darkMode}`);
 
@@ -31,4 +31,4 @@ const checkDarkMode = () => {
   return [darkMode, setDarkMode];
 };
 
-export default checkDarkMode;
+export default useDarkMode;

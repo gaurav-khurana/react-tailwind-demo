@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import checkDarkMode from "../../hooks/DarkModeHook";
+import useDarkMode from "../../hooks/DarkModeHook";
 import { useEffect, useState } from "react";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -78,7 +78,7 @@ function DarkMode() {
   // }, [darkMode]);
 
   //NOTE using custom react hook
-  const [toggleDark, setToggleDark] = checkDarkMode();
+  const [toggleDark, setToggleDark] = useDarkMode();
   const handleToggleDark = () => {
     setToggleDark(!toggleDark);
   };
